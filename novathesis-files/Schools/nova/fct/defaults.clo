@@ -19,7 +19,7 @@
 
 % Scientific filed
 \IfSubStr{\novathesis@opt@docdegree}{phd}{%
-    \majorfield[pt]={Informática}
+    \majorfield[pt]={Diseño de  Redes Telemáticas}
     \majorfield[en]={Computer Science}
   }{%
   \majorfield[pt]={Engenharia Informática}

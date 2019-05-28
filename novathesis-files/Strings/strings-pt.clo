@@ -50,11 +50,11 @@
 \degreestr[msc,f,pt]={Mestre}
 \degreestr[mscplan,m,pt]={Mestre}
 \degreestr[mscplan,f,pt]={Mestre}
-\degreestr[phd,m,pt]={Doutor}
+\degreestr[phd,m,pt]={Especialista}
 \degreestr[phd,f,pt]={Doutora}
-\degreestr[phdplan,m,pt]={Doutor}
+\degreestr[phdplan,m,pt]={Especialista}
 \degreestr[phdplan,f,pt]={Doutora}
-\degreestr[phdprop,m,pt]={Doutor}
+\degreestr[phdprop,m,pt]={Especialista}
 \degreestr[phdprop,f,pt]={Doutora}
 
 \docdegreestr[bsc,pt]={Projeto de Licenciatura}
@@ -68,13 +68,13 @@
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
 \dissertationstr[mscplan,pt]={Relatório intermédio para obtenção do Grau de %
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
-\dissertationstr[msc,pt]={Dissertação para obtenção do Grau de %
+\dissertationstr[msc,pt]={Tesis que para Optar por el Grado de: %
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
 \dissertationstr[phdplan,pt]={Relatório intermédio para obtenção do Grau de %
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
-\dissertationstr[phdprop,pt]={Proposta de dissertação para obtenção do Grau de %
+\dissertationstr[phdprop,pt]={Tesis que para Optar por el Grado de: %
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
-\dissertationstr[phd,pt]={Dissertação para obtenção do Grau de %
+\dissertationstr[phd,pt]={Tesis que para Optar por el Grado de: %
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
 
 \copyrighttextstr[pt]={A \thefaculty[\novathesis@opt@copyrightlang]\ e a \theuniversity[\novathesis@opt@copyrightlang]\ têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar esta dissertação através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objetivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor.}
