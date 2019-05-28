@@ -1,91 +1,268 @@
 %!TEX root = ../template.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% chapter4.tex
+%% chapter3.tex
 %% NOVA thesis document file
 %%
-%% Chapter with lots of dummy text
+%% Chapter with a short laext tutorial and examples
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Diseño de una Red SD-WAN}
-\label{cha:Diseño de una Red SD-WAN}
+\chapter{Costos}
+\label{cha:Costos}
 
-\section{Selección de proveedor y tecnología} % (fold)
-\label{sec:Selección de proveedor y tecnología}
+Una de las mayores motivaciones para el desarrollo de este proyecto es reducir el costo en OPEX que costarían los enlaces de los proveedores de servicio al trasladar los servicios de la empresa a la nube, ya que los costos de ancho de banda se reducirían notablemente al realizar esta migración a la nube con SD-WAN, la tabla X muestra una comparación aproximada de los costos de los enlaces WAN requeridos con y sin SD-WAN. Dichos costos son calculados tomando en cuenta los valores publicados por google para su aplicación de gsuite, ya que el cliente entre otras cosas realizará reuniones a través de google meet, esto requiere 3.2MB de ancho de banda por participante.
+\\
+Adicional al costo de los enlaces, el OPEX también se vería reducido al requerir menor tiempo de los recursos de IT en la administración de la red, ya que al automatizar las configuraciones y cambios la velocidad de aprovisionamiento se vería ampliamente mejorada y por tanto su costo sería menor.
 
-Para la selección de la solución específica que se diseña tenemos en cuenta los costos de cada una de ella y por supuesto las ventajas en términos de servicio que obtendría el cliente, el principal criterio de selección es utilizar la solución que cumpla con los objetivos del proyecto sin implicar costos demasiado grandes para el cliente. Teniendo esto en cuenta debemos considerar la solución actual del cliente.
+This Chapter aims at exemplifying how to do common stuff with \LaTeX. We also show some stuff which is not that common! ;)
 
-Hace poco tiempo el cliente migró su infraestructura de unos equipos Mikrotik a dispositivos Cisco, por lo que de ser posible el proyecto debe conservar dichos equipos para no perder la inversión realizada por el cliente. La migración realizada fue de equipos Mikrotik a equipos Cisco 891 en las diferentes tiendas y equipos Cisco 4331 en las regionales y la sede nacional.
+Please, use these examples as a starting point, but you should always consider using the \emph{Big Oracle} (aka, \href{http://www.google.com}{Google}, your best friend) to search for additional information or alternative ways for achieving similar results.
 
-Dados los criterios definidos anteriormente se procede a analizar cada una de las soluciones que se plantearon para el desarrollo del proyecto.
+\section{Document Structure} % (fold)
+\label{sec:document_structure}
 
-La primera opción que se consideró fue utilizar OpenDayLight como controlador SD-WAN ya que este utiliza totalmente software abierto para su funcionamiento, esta plataforma utiliza protocolos abiertos como  Openflow y Netconf, la figura X muestra la arquitectura de esta solución:
-
-Esta arquitectura aunque al utilizar protocolos estándar permite que se conecte cualquier elemento de red que hable Openflow tiene la limitante de que los equipos de red tradicionales, incluyendo los que tiene el cliente no soportan OpenFlow por defecto, y por tanto los enrutadores que utiliza el cliente hoy en día no se integran con esta arquitectura de SDN, lo que significa que implementar esta solución requeriría cambiar todos los enrutadores por unos que soporten OpenFlow.
-
-Se tuvieron en cuenta también soluciones de varios fabricantes para el proyecto, más precisamente las soluciones SD-WAN de Nokia(Nuage), Cisco(Viptela), vmware(Velo cloud) y Silverpeak, estas son las soluciones que dominan el mercado a la fecha de elaboración de este documento. Todas estas son soluciones SDN que desagregan completamente los planos de control y gestión de los enrutadores en las sedes Branch y los centralizan en controladoras y servidores de gestión, aunque todas las soluciones mencionadas utilizan protocolos diferentes su arquitectura y funcionamiento es muy similar.
-
-Dentro de cada una de estas opciones se desagregan las capas de control y de gestión en un sitio centralizado, normalmente un centro de datos, y en los branch solamente se tiene la capa de envío de datos o forwarding, estas sedes remotas se comunican entre ellas en todos los casos mediante túneles que se forman automáticamente gracias al plano de control centralizado, sin embargo la tecnología con la que se forman dichos túneles y con la que se envía la información de enrutamiento del plano de control al plano de forwarding cambia considerablemente entre todas las soluciones, y por tanto son incompatibles entre ellos. Las siguientes son las tecnologías que cada una de las soluciones mencionadas utiliza para la comunicación contra los routers de borde:
-
-\begin{itemize}
-\item[•]Nokia (nuage): Openflow
-\item[•]Cisco (Viptela): Netconf, OMP
-\item[•]Vmware (VeloCloud):Dynamic multipath Optimization
-\item[•]Silverpeak: Dynamic path control
-\end{itemize}
-
-Podemos ver entonces que los enrutadores tradicionales no soportan ninguno de los protocolos de los diferentes fabricantes, por tanto cada fabricante desarrolla sus propios routers de borde para su solución SD-WAN, y por esta razón la implementación de cualquiera de estas soluciones implicaría un reemplazo total de los equipos.
-
-Existe una solución SD-WAN de Cisco basada en los enrutadores tradicionales llamada IWAN, esta solución combina diferentes protocolos ya activos en los enrutadores tradicionales: EIGRP, DMVPN, PfR, WAAS y NBAR para generar una solución basada en aplicaciones que balancee y enrute el tráfico de forma inteligente en la red, todo automatizado a través de su controlador SDN: APIC-EM. Los enrutadores con los que cuenta el cliente soportan cada una de las aplicaciones aquí mencionadas y por tanto esta sería la única solución que no requiere un reemplazo total de los equipos del cliente.
-Por esta razón IWAN fue la solución seleccionada para el desarrollo de este proyecto, ya que de otra forma la inversión que se requeriría al reemplazar todos los enrutadores del cliente con cualquiera de las demás soluciones aquí consideradas sería tan alta que impediría el desarrollo del proyecto, ya que el capital con el que se cuenta para el desarrollo del mismo es limitado.
-
-\section{Ventajas y desventajas de la solución propuesta} % (fold)
-\label{sec:Ventajas y desventajas de la solución propuesta}
-
-Esta sección permite establecer las ventajas y desventajas del uso de la tecnología SD-WAN seleccionada en comparación con la solución actual que tiene el cliente en sus equipos.
-Una de las ventajas más notorias es el tiempo que se ahorra en los procesos tanto de implementación como de cambios, a continuación hay un comparativo de los tiempos para la nueva solución y para la solución anterior.
-
-Adicional a los tiempos, las dos soluciones tienen diferencias importantes a nivel de servicio por lo que la siguiente tabla muestra en detalle dichas diferencias para establecer qué solución conviene más para las necesidades del negocio.
-
-Como puede verse en ambas tablas, la solución de IWAN genera ventajas tanto en tiempos como en costos y en redundancia y servicio, por lo que en general está más alineada con las necesidades del negocio
+% section document_structure (end)
 
 
-\section{Requerimientos de aplicaciones} % (fold)
-\label{sec:Requerimientos de aplicaciones}
+\section{Dealing with Bibliogrpahy} % (fold)
+\label{sec:dealing_with_bibliogrpahy}
 
-Este diseño se encuentra enfocado a las aplicaciones del cliente, por lo que este capítulo está enfocado a determinar los requerimientos de ancho de banda, latencia y jitter para las aplicaciones críticas del cliente, esto con el fin de establecer un diseño de QoS y para definir el ancho de banda necesario en los enlaces, cabe aclarar que el uso de estas aplicaciones cambia en los 3 tipos de sedes definidos en el proyecto. Las aplicaciones definidas por el cliente son las siguientes:
-
-\begin{itemize}
-\item[•]Telefonía: Telefonía IP en todas las sedes, un telefóno IP por tienda y un segmento de red para telefonía en cada una de las regionales y en la sede nacional, este servicio de telefonía utiliza SIP como protocolo de señalización y túneles IAX entre las plantas telefónicas, hay una planta telefónica en cada regional a donde se registran los teléfonos de cada tienda, a continuación se muestra el diagrama general del servicio de telefonía actualmente.
-
-\item[•]FTP: Cada una de las tiendas realiza un proceso de inventariado semanalmente, estos archivos de inventario son subidos a un servidor FTP en la sede nacional de Medellín, por lo tanto el servicio de FTP es considerado como crítico para el negocio.
-
-\item[•]Videoconferencia: El cliente utiliza un servicio de videoconferencia en la nube, más específicamente google Hangouts, que para una calidad óptima de video utiliza 3.2Mbps por videoconferencia, por lo que es una de las aplicaciones que más consumo de ancho de banda genera, es además una de las aplicaciones más críticas para la compañía, ya que es utilizada por los altos directivos.
-
-\item[•]CCTV: El cliente monitorea mediante el enlace de internet de las tiendas, todas la plataforma de CCTV, por lo que se debe garantizar el acceso desde internet a esta aplicación.
-
-\item[•]CCTV:Servicios Web privados: El cliente cuenta con una Intranet en la que las tiendas y las regionales realizan procesos corporativos vitales para la empresa, de igual forma al hacer parte de un grupo empresarial, consumen en forma de servicios Web aplicaciones en datacenter de otros miembros del grupo empresarial.
-
-\item[•]Internet: Desde cada una de las tiendas y las regionales se tiene acceso a internet para navegación, sin embargo este no es un servicio crítico para el cliente.
-
-\item[•]Escritorio remoto: El grupo de soporte de TI requiere conectividad por escritorio remoto a regionales y tiendas de manera que se pueda realizar un soporte remoto de aplicaciones y equipos de computo.
-
-\item[•]Correo: El cliente cuenta con buzones de correo de google que acceden mediante sus enlaces a internet.
-
-Los requerimientos de ancho de banda, jitter y delay así como la criticidad de cada servicio se resumen en la siguiente tabla:
-
-\section{Requerimientos de ancho de banda} % (fold)
-\label{sec:Requerimientos de ancho de banda}
+% section dealing_with_bibliogrpahy (end)
 
 
-Con cada una de las aplicaciones descritas se procede a calcular por tanto el ancho de banda requerido en cada una de las sedes, y se genera una estadística del consumo actual en cada una de esas sedes para establecer tanto de manera teórica como práctica el ancho de banda requerido en cada uno de los tipos de sedes remotas y en el centro de datos.
+\section{Inserting Tables} % (fold)
+\label{sec:inserting_tables}
 
-Se realiza un análisis del consumo actual de ancho de banda del cliente utilizando las herramientas de monitoreo disponibles y se obtienen los siguientes datos de consumo para cada una de las 11 sedes regionales y nacionales:
+% section inserting_tables (end)
 
-Con estos datos se puede concluir que ya hay saturación en las sedes, y que por tanto la solución actual está presentando retardos y pérdidas de paquetes en la comunicación.
-Se toman muestras de tráfico utilizando el protocolo Netflow con el fin de caracterizar el tráfico de cada una de las aplicaciones obteniendo los siguientes resultados:
 
-Sede nacional Tocancipá:
+\section{Importing Images} % (fold)
+\label{sec:importing_images}
 
-De estos resultados se concluye que para todos los casos el Tráfico Web representa la gran mayoría del tráfico que se genera tanto en las regionales como en las sedes nacionales
+% section importing_images (end)
 
-El tráfico en todos los casos se encuentra al límite de la capacidad, las herramientas de monitoreo no muestran pérdidas de paquetes pero si latencias y jitter que puede afectar la calidad del tráfico de voz y las videoconferencias, adicionalmente en la actualidad no habría posibilidad de crecimiento, teniendo en cuenta el nivel de consumo actual se definen los siguientes anchos de banda para el proyecto:
-\end{itemize}
+
+\section{Floats, Figures and Captions} % (fold)
+\label{sec:floats_figures_and_captions}
+
+% \subsection{Inserting Figures Wrapped with text} % (fold)
+% \label{ssec:inserting_images_wrapped_with_text}
+% 
+% You should only use this feature is \emph{really} necessary. This means, you have a very small image, that will look lonely just with text above and below.
+% 
+% In this case, you must use the \verb!wrapfiure! package.  To use \verb!wrapfig!, you must first add this to the preamble:
+% 
+% \begin{wrapfigure}{l}{2.5cm}
+%   \centering
+%     \includegraphics[width=2cm]{snowman-vectorial}
+%   \caption{A snow-man}
+% \end{wrapfigure}	
+% 
+% \noindent\verb!\usepackage{wrapfig}!\\
+% This then gives you access to:\\
+% \verb!\begin{wrapfigure}[lineheight]{alignment}{width}!\\
+% Alignment can normally be either ``l'' for left, or ``r'' for right. Lowercase ``l'' or ``r'' forces the figure to start precisely where specified (and may cause it to run over page breaks), while capital ``L'' or ``R'' allows the figure to float. If you defined your document as twosided, the alignment can also be ``i'' for inside or ``o'' for outside, as well as ``I'' or ``O''. The width is obviously the width of the figure. The example above was introduced with:
+% \lstset{language=TeX, morekeywords={\begin,\includegraphics,\caption}, caption=Wrapfig Example, label=lst:latex_example}
+% \begin{lstlisting}
+% 	\begin{wrapfigure}{l}{2.5cm}
+% 	  \centering
+% 	    \includegraphics[width=2cm]{snowman-vectorial}
+% 	  \caption{A snow-man}
+% 	\end{wrapfigure}	
+% \end{lstlisting}
+
+% subsection inserting_images_wrapped_with_text (end)
+
+% section floats_figures_and_captions (end)
+
+\lipsum[1-3]
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{One sub-figure\label{fig:leftsubfig}}%
+    {\includegraphics[width=0.5\linewidth]{knitting-vectorial}}%
+  \subcaptionbox{Another sub-figure\label{fig:rightsubfig}}%
+    {\includegraphics[width=0.5\linewidth]{knitting-vectorial}}%
+  \caption{A figure with two sub-figures!}
+  \label{fig:fig2subfig}
+\end{figure}
+
+\textbf{And this is a small text that references the Figure~\ref{fig:fig2subfig} and its Subfigures~\ref{fig:leftsubfig} and~\ref{fig:rightsubfig}.}
+
+\lipsum[1-3]
+
+
+\section{Text Formatting} % (fold)
+\label{sec:text_formatting}
+
+% section text_formatting (end)
+
+
+\section{Generating PDFs from \LaTeX} % (fold)
+\label{sec:generating_pdfs_from_latex}
+
+\subsection{Generating PDFs with pdflatex} % (fold)
+\label{ssec:generating_pdfs_with_pdflatex}
+
+You may create PDF files either by using \verb!latex! to generate a DVI file, and then use one of the many DVI-2-PDF converters, such as \verb!dvipdfm!.
+
+Alternatively, you may use \verb!pdflatex!, which will immediately generate a PDF with no intermediate DVI or PS files. In some systems, such as Apple, PDF is already the default format for \LaTeX. I strongly recommend you to use this approach, unless you have a very good argument to go for \verb!latex! + \verb!dvipdfm!.
+
+A typical pass for a document with figures, cross-references and a bibliography would be:
+\begin{verbatim}
+$ pdflatex template
+$ bibtex template
+$ pdflatex template
+$ pdflatex template
+\end{verbatim}
+You will notice that there is a new PDF file in the working directory called \verb!template.pdf!. Simple :)
+
+Please note that, to be sure all table of contents, cross-references and bibliographic citations are up-to-date, you must run \verb!latex! once, then \verb!bibtex!, and then \verb!latex! twice.
+% section generating_pdfs_with_pdflatex (end)
+
+\subsection{Dealing with Images} % (fold)
+\label{sub:dealing_with_images}
+
+You may process the same source files with both \verb!latex! or \verb!pdflatex!. But, if your text include images, you must be careful. \verb!latex! and \verb!pdflatex! accept images in different (exclusive) formats.  For \verb!latex! you may use EPS ou PS figures. For \verb!pdflatex! you may use JPG, PNG or PDF figures.  I strongly recommend you to use PDF figures in vectorial format (do not use bitmap images unless you have no other choice).
+% subsection dealing_with_images (end)
+
+
+\subsection{Creating Source Files Compatible with both latex and pdflatex} % (fold)
+\label{ssec:creating_source_files_compatible_with_both_latex_and_pdflatex}
+
+Do not include the extension of the file in the \verb!\includegraphics! command. E.g., use\\
+\verb!\includegraphics{sonwman}!\\
+and not\\
+\verb!\includegraphics{sonwman.eps}!.\\
+If you use the first form, \verb!latex! or \verb!pdflatex! will add an appropriate file extension.
+
+This means that, if you plan to use only \verb!pdflatex!, you need only to keep (preferably) a PDF version of all the images. If you plan to use also \verb!latex!, then you also need an EPS version of each image.
+% subsection creating_source_files_compatible_with_both_latex_and_pdflatex (end)
+
+% section generating_pdfs_from_latex (end)
+
+
+\newpage
+
+{\Large To be included in the sections above}\\
+
+Para fazer citações, deverá usar-se a chave da referência no ficheiro BibTeX. Se for uma única referência~\cite{Artho04}, usar um ``\verb!~!'' para ligar o \verb!\cite{...}! à palavra que o precede (\ldots\verb!referência~\cite{Artho04}!).  Caso queira fazer múltiplas citações~\cite{Shavit95,Silberschatz06,Moss85}, deverá agrupá-las dentro de um úinico \verb!\cite{...}!.
+
+Note que o ficheiro de bibliografia pode ter tantas entradas quantas quiser. Apenas aquelas cuja chave seja referenciada no texto é que serão incluidas na listagem de bibliografia.
+
+
+Footnotes\footnote{This is a simple footnote.} will be numbered and shown in the bottom of the page.
+
+
+A Tabela~\ref{tab:hla:results} ilustra alguns conceitos importantes associados à contrução de tabelas:
+\begin{asparaenum}[i)]
+	\item Não usar linhas verticais;
+	\item A legenda deve ficar por cima da tabela;
+	\item Usar as macros \verb!\toprule!, \verb!\midrule! e \verb!\bottomrule! para fazer a linha horizontal superior, interiores e inferior, respectivamente.
+\end{asparaenum}
+ 
+\begin{table}[ht]
+	\caption{Test results summary.}
+	\label{tab:hla:results}
+\centering
+\begin{tabular}{lccccc}
+	\toprule
+	\multicolumn{1}{c}{\textbf{Test}} 	& \textbf{Anomalies}	& \textbf{Warnings}	& \textbf{Correct} 	& \textbf{Categories}		& \textbf{Missed} \\
+	\midrule
+\cite{Beckman08}~Connection 	& 2 & 2	& 1	& \emph{C}				& 1 \\
+\cite{Artho03}~Coordinates'03 	& 1	& 4	& 1	& \emph{2B, 1C}			& 0 \\
+\cite{Artho03}~Local Variable	& 1	& 2	& 1	& \emph{A}				& 0 \\
+\cite{Artho03}~NASA				& 1	& 1	& 1	& ---					& 0 \\
+\cite{Artho04}~Coordinates'04	& 1	& 4	& 1	& \emph{3C}				& 0 \\
+\cite{Artho04}~Buffer			& 0	& 7	& 0	& \emph{2A, 1B, 2C, 2D}	& 0 \\
+\cite{Artho04}~Double-Check		& 0	& 2	& 0	& \emph{1A, 1B}			& 0 \\
+\cite{Flanagan04}~StringBuffer	& 1	& 0	& 0	& ---					& 1 \\
+\cite{Praun03}~Account			& 1	& 1	& 1	& ---					& 0 \\
+\cite{Praun03}~Jigsaw			& 1	& 2	& 1	& \emph{C}				& 0 \\
+\cite{Praun03}~Over-reporting	& 0	& 2	& 0	& \emph{1A, 1C}			& 0 \\
+\cite{Praun03}~Under-reporting	& 1	& 1	& 1	& ---					& 0 \\
+\cite{IBM-Rep}~Allocate Vector	& 1	& 2	& 1	& \emph{C}				& 0 \\
+Knight Moves					& 1	& 3	& 1	& \emph{2B}				& 0 \\
+	\midrule
+	\textbf{Total}			& \textbf{12}		& \textbf{33}		& \textbf{10}			& \textbf{5A, 6B, 10C, 2D}	& \textbf{2} \\
+	\bottomrule
+\end{tabular}
+\end{table}
+
+
+As figuras a inserir no documento deverão ser de qualidade, preferencialmente em formato vectorial (PDF vectorial) e não em \emph{bitmap} (PNG, JPG, etc). As imagens \emph{bitmap} (Figura~\ref{fig:Figuras_Tree_silhouettes-bitmap}) não escalam bem e têm reflexos negativos na qualidade do seu docuemnto.  Pelo contrário, as imagens \emph{vectoriais} {Figura~\ref{fig:Figuras_Tree_silhouettes-vectorial}} escalam muito tanto quanto o necessário sem degradar a qualidade da imagem.
+
+Só deve usar \emph{screenshots} se não tive mesmo nenhuma alternativa.  Em vez e gerar um \emph{screenshot}, tente usar uma impressora virtual PDF e imprimir para um ficheiro PDF. Regra geral obterá um PDF vetorial. Mesmo que o seu PDF contenha imagens, elas terão sempre qualidade maior ou igual à que obteria com um \emph{screenshot}.
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=1in]{snowman-bitmap}
+	\includegraphics[height=3in]{snowman-bitmap}
+	\includegraphics[height=6in]{snowman-bitmap}
+	\caption{Imagem em formato \emph{bitmap} (JPG)}
+	\label{fig:Figuras_Tree_silhouettes-bitmap}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=1in]{snowman-vectorial}
+	\includegraphics[height=3in]{snowman-vectorial}
+	\includegraphics[height=6in]{snowman-vectorial}
+	\caption{Imagem em formato PDF vectorial}
+	\label{fig:Figuras_Tree_silhouettes-vectorial}
+\end{figure}
+
+Para agregar várias figuras numa única… Poderá assim referenciar o conjunto~\ref{fig:figura-completa}, a priemira delas~\ref{fig:novelo} ou a segunda~\ref{fig:nuvem}.
+
+
+\begin{figure}[htbp]
+	\centering
+    \subbottom[Novelo de lã] {%
+		\label{fig:novelo}
+		\includegraphics[height=1in]{knitting-vectorial}
+    }
+\qquad\qquad
+    \subbottom[Tempestade com neve] {%
+		\label{fig:nuvem}
+		\includegraphics[height=1in]{snowstorm-vectorial}
+    }
+  \caption{Exemplo de utilização de \emph{subbottom}}
+  \label{fig:figura-completa}
+\end{figure}
+
+
+Para incluir listagens de código no seu documento, deverá incluir o pacote \emph{listings} e depois usar o ambiente \emph{lstlisting}, como exemplificado na Listagem~\ref{lst:HelloWorld}.
+
+\lstset{language=Java, caption=Hello World, label=lst:HelloWorld}
+\begin{lstlisting}
+/** 
+ * The HelloWorldApp class implements an application that
+ * simply prints "Hello World!" to standard output.
+ */
+class HelloWorldApp {%
+    public static void main(String[] args) {%
+        System.out.println("Hello World!"); // Display the string.
+    }
+}
+\end{lstlisting}
+
+\section{Equações}
+
+O LaTeX é uma ferramenta poderosa para escrever em estilo matemático. Permite inserir fórmulas no meio do texto como por exemplo esta: $ax^2 + bx + c = 0$. Também permite que as fórmulas sejam destacadas numa linha separada e centradas na página 
+$$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$
+\[x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\]
+ou numeradas 
+\begin{equation}
+aaa
+\label{eq:1}
+\end{equation}
+que depois pode ser referida no texto como sendo a equação~\ref{eq:1}
+$$\begin{array}{l}
+aa
+\end{array}
+$$
+
+\begin{eqnarray}
+a\\
+b\\
+c\\
+\end{eqnarray}
