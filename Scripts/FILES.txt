@@ -11,6 +11,13 @@ Chapters/appendix1.tex
 Chapters/chapter1.tex
 Chapters/chapter2.tex
 Chapters/chapter3.tex
+Chapters/chapter4.tex
+Chapters/chapter5.tex
+Chapters/chapter6.tex
+Chapters/chapter7.tex
+Chapters/chapter8.tex
+Chapters/chapter9.tex
+Chapters/chapter10.tex
 Chapters/dedicatory.tex
 Chapters/Figures/knitting-bitmap.jpg
 Chapters/Figures/knitting-vectorial.pdf
