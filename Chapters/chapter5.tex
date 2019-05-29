@@ -11,23 +11,24 @@
 % ================
 % = Introduction =
 % ================
-\section{Introduction} % (fold)
-\label{sec:introduction}
 
-{\LARGE \textbf{~\\These instructions are outdated! Please see also the “template.tex” file!\\}}
+%%\section{Introduction} % (fold)
+%%\label{sec:introduction}
+%%
+%%{\LARGE \textbf{~\\These instructions are outdated! Please see also the “template.tex” file!\\}}
 
-This chapter describes how to use the \LaTeX\ \novathesis\ template (and the “\novathesisclass” class file).
+%%This chapter describes how to use the \LaTeX\ \novathesis\ template (and the “\novathesisclass” class file).
 
-Let's start with some simple suggestions:
+%%Let's start with some simple suggestions:
 
-\begin{enumerate}
-  \item No! You don't have to use this template to write your thesis.  You don't even have to use \LaTeX.  However, writing a thesis is serious stuff, and which tool you shall use to write it is not a decision to make lighthearted.
-  \item \LaTeX\ is hard enough by itself.  This template aims at making your life easier, but not easy. If you choose to use this template to write your thesis, you are very welcome.  However, don't expect me to provide you help with \LaTeX.  Look for help with your friends (you have some friends, don't you?), or search the web, or try even to read some book(s) on \LaTeX. In the end you will certainly find the experience rewarding.
-  \item So, don't forget, when you come to the point of “\emph{How do I do this with \LaTeX?}” look for help!  Google is your best friend. 
-  \item If you believe the difficulty is related with the \novathesis\ template itself (and not with \LaTeX), please \textbf{do not} send me an email asking for help.  Please look for help in the \novathesis\ Google Group (URL) and the \novathesis\ Facebook group (URL).  If you can't find help there from previous posts/messages, then post your own question. Hopefully someone will answer you.
-\end{enumerate}
+%%\begin{enumerate}
+%%  \item No! You don't have to use this template to write your thesis.  You don't even have to use \LaTeX.  However, writing a thesis is serious stuff, and which tool you shall use to write it is not a decision to make lighthearted.
+%%  \item \LaTeX\ is hard enough by itself.  This template aims at making your life easier, but not easy. If you choose to use this template to write your thesis, you are very welcome.  However, don't expect me to provide you help with \LaTeX.  Look for help with your friends (you have some friends, don't you?), or search the web, or try even to read some book(s) on \LaTeX. In the end you will certainly find the experience rewarding.
+ %% \item So, don't forget, when you come to the point of “\emph{How do I do this with \LaTeX?}” look for help!  Google is your best friend. 
+%%  \item If you believe the difficulty is related with the \novathesis\ template itself (and not with \LaTeX), please \textbf{do not} send me an email asking for help.  Please look for help in the \novathesis\ Google Group (URL) and the \novathesis\ Facebook group (URL).  If you can't find help there from previous posts/messages, then post your own question. Hopefully someone will answer you.
+%%\end{enumerate}
 
-Now, let's go to a major issue for Windows users.  Characters have to be encoded in files as numbers, and that is how character encodings were born. ASCII and EBCDIC standards are long lost in the past.  The world now uses UTF-8.  Well, not all the world… Windows is still stick in its \emph{codepages}, and “latin1” is what windows uses as the codepage for Western Europe. This messes up with the template. Please be sure you use an editor with UTF-8 support.  \emph{Go to the preferences/options/… of your text editor and set up its default file encoding as UTF-8.}
+%%Now, let's go to a major issue for Windows users.  Characters have to be encoded in files as numbers, and that is how character encodings were born. ASCII and EBCDIC standards are long lost in the past.  The world now uses UTF-8.  Well, not all the world… Windows is still stick in its \emph{codepages}, and “latin1” is what windows uses as the codepage for Western Europe. This messes up with the template. Please be sure you use an editor with UTF-8 support.  \emph{Go to the preferences/options/… of your text editor and set up its default file encoding as UTF-8.}
 
 % section introduction (end)
 
@@ -39,18 +40,34 @@ Now, let's go to a major issue for Windows users.  Characters have to be encoded
 
 \subsection{Conceptos Generales de una SD-WAN}
 \label{sec:Conceptos Generales de una SD-WAN}
-SD-WAN es una aplicación específica de la tecnología de redes SDN aplicada a las conexiones WAN utilizadas para conectar redes empresariales sobre grandes distancias geográficas suministrando una arquitectura overlay moviendo el plano de control a la nube, sea esta pública o privada. Según SDN central, SDN puede definirse como un enfoque de software centrico a las tecnologías de networking que reducen los costos operacionales y de capital (Capex y Opex) mediante un control programático de la infraestructura de red, facilitando la customización optimización e innovación.
+SD-WAN es una aplicación específica de la tecnología de redes SDN aplicada a las conexiones WAN utilizadas para conectar redes empresariales sobre grandes distancias geográficas suministrando una arquitectura "Overlay" moviendo el plano de control a la nube, sea esta pública o privada. Según SDN central, puede definirse como un enfoque de software centrico a las tecnologías de "Networking" que reducen los costos operacionales y de capital ("Capex y Opex") mediante un control programático de la infraestructura de red, facilitando la optimización e innovación.
 \\
 \subsection{Modelos de Programabilidad de Red}
 \label{sec:Modelos de Programabilidad de Red}
 
-Existen actualmente 4 modelos de programabilidad de red, considerados como arquitecturas SDN, la diferenciación fundamental entre los 4 modelos consiste en la forma como el plano de control se comunica con el plano de datos de los dispositivos.estos modelos pueden resumirse como sigue:
+Existen actualmente 4 modelos de programabilidad de red, considerados como arquitecturas SDN, la diferenciación fundamental entre los 4 modelos consiste en la forma como el plano de control se comunica con el plano de datos de los dispositivos, estos modelos pueden resumirse como sigue:
 \begin{itemize}
-\item[•]APIs programables: la primera aproximación a SDN es la inclusión de API dentro de los dispositivos de red, en este modelo sin embargo no hay un desacoplamiento de los planos de datos y control y estos siguen estando dentro del dispositivo de red, los equipos de red se comunican directamente con las aplicaciones a través de APIs u otro mecanismo como NETCONF.
-\item[•]SDN Clásico: En este modelo el plano de control y el plano de datos si se encuentran desacoplados completamente, el plano de control se comunica con las aplicaciones mediante APIs y con el plano de datos mediante Openflow u otro protocolo propietario.
-\item[•]SDN híbrido: Funciona bajo el mismo concepto que la arquitectura clásica de SDN, con la diferencia de que en este caso los dispositivos mantienen su propio plano de control pero siguen comunicándose con las aplicaciones a través de Openflow mediante una controladora que mantiene el plano de control de todos los equipos.
-\item[•]Virtualización de red: la tendencia de la virtualización ha dividido las redes en un dominio físico y uno virtual, la tendencia es que las decisiones de enrutamiento y seguridad se hagan por software en el plano de virtualización, la comunicación entre este plano virtual y el físico se realiza mediante tecnologías desarrolladas por los fabricantes de software de virtualización, uno de los ejemplos más conocidos es NFX.
+\item[•] \textbf{APIs programables:}  la primera aproximación a SDN es la inclusión de API dentro de los dispositivos de red, en este modelo sin embargo no hay un desacoplamiento de los planos de datos y control y estos siguen estando dentro, los equipos de red se comunican directamente con las aplicaciones a través de APIs u otro mecanismo como NETCONF. \textbf{Ver figura 5.1(a) Apis Programables}.
 
+\item[•] \textbf{SDN Clásico}: En este modelo el plano de control y el plano de datos si se encuentran desacoplados completamente, el plano de control se comunica con las aplicaciones mediante APIs y con el plano de datos mediante Openflow u otro protocolo propietario Ver \textbf{Ver figura 5.1(b) SDN Clásico}.
+
+\item[•] \textbf{SDN Híbrido:} funciona bajo el mismo concepto que la arquitectura clásica de SDN, con la diferencia de que en este caso los dispositivos mantienen su propio plano de control pero siguen comunicándose con las aplicaciones a través de Openflow mediante una controladora que mantiene el plano de control de todos los equipos. \textbf{Ver figura 5.1(c) SDN Híbrido}.
+
+\item[•]\textbf{Virtualización de Red:} la tendencia de la virtualización ha dividido las redes en un dominio físico y uno virtual, la tendencia es que las decisiones de enrutamiento y seguridad se hagan por software en el plano de virtualización, la comunicación entre este plano virtual y el físico se realiza mediante tecnologías desarrolladas por los fabricantes de software de virtualización, uno de los ejemplos más conocidos es NFX. \textbf{Ver figura 5.1(d) Virtualización de Red}.
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{Apis Programables\label{fig:leftsubfig}}%
+    {\includegraphics[width=0.2\linewidth]{figure7}}%
+  \subcaptionbox{SDN Clásica\label{fig:rightsubfig}}
+    {\includegraphics[width=0.2\linewidth]{figure8}}%
+  \subcaptionbox{SDN Híbrida\label{fig:rightsubfig}}
+    {\includegraphics[width=0.2\linewidth]{figure9}}%
+  \subcaptionbox{Virtualización de Red\label{fig:rightsubfig}}
+    {\includegraphics[width=0.2\linewidth]{figure10}}%
+  \caption{Modelos Programables de Red}
+  \label{fig:fig2subfig}
+\end{figure}
 
 \end{itemize}
 \subsection{NFV}
