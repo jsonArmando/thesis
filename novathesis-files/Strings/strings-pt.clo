@@ -14,17 +14,17 @@
 \acknowledgementsstring[pt]={Agradecimentos}
 
 \adviserstr[1,m,pt]={Orientador}
-\adviserstr[1,f,pt]={Orientadora}
+\adviserstr[1,f,pt]={Presentado por}
 \adviserstr[2,m,pt]={Orientadores}
 \adviserstr[2,f,pt]={Orientadoras}
 \coadviserstr[1,m,pt]={Co-orientador}
-\coadviserstr[1,f,pt]={Co-orientadora}
+\coadviserstr[1,f,pt]={Presentado por}
 \coadviserstr[2,m,pt]={Co-orientadores}
 \coadviserstr[2,f,pt]={Co-orientadoras}
 
-\committeetitlestr[pt]={Júri}
-\commiteememberstr[c,1,m,pt]={Presidente}
-\commiteememberstr[c,1,f,pt]={Presidente}
+\committeetitlestr[pt]={Ingeniero:}
+\commiteememberstr[c,1,m,pt]={Director}
+\commiteememberstr[c,1,f,pt]={Director}
 \commiteememberstr[c,2,m,pt]={Presidentes}
 \commiteememberstr[c,2,f,pt]={Presidentes}
 \commiteememberstr[r,1,m,pt]={Arguente}
@@ -32,7 +32,7 @@
 \commiteememberstr[r,2,m,pt]={Arguentes}
 \commiteememberstr[r,2,f,pt]={Arguentes}
 \commiteememberstr[a,1,m,pt]={Orientador}
-\commiteememberstr[a,1,f,pt]={Orientadora}
+\commiteememberstr[a,1,f,pt]={Presentado por}
 \commiteememberstr[a,2,m,pt]={Orientadores}
 \commiteememberstr[a,2,f,pt]={Orientadoras}
 \commiteememberstr[m,1,m,pt]={Vogal}

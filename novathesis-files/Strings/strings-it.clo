@@ -45,7 +45,7 @@
 \docdegreestr[phd,it]={Tesi di Dottorato}
 
 \committeetitlestr[it]={Commissione Esaminatrice}
-\commiteememberstr[c,1,m,it]={Presidente}
+\commiteememberstr[c,1,m,it]={Director}
 \commiteememberstr[c,1,f,it]={Presidentessa}
 \commiteememberstr[c,2,m,it]={Presidenti}
 \commiteememberstr[c,2,f,it]={Presidentesse}
