@@ -69,27 +69,72 @@ Existen actualmente 4 modelos de programabilidad de red, considerados como arqui
 \subsection{Network Function Virtualization (NFV)}
 \label{sec:Network Function Virtualization (NFV)}
 
-Network Function Virtualization o NFV ofrece una nueva forma de diseñar, aprovisionar y administrar los servicios de red, desacoplando las funciones de red de los hardware propietarios y realizando funciones en software como NAT, firewall y DNS por nombrar algunos ejemplos. Esta tecnología se encuentra diseñada para consolidar los componentes de red requeridos para lograr una infraestructura completamente virtualizada.
-Bajo este concepto toda la orquestración y control de los dispositivos físicos se realizaría desde un punto central desde donde se administrarían las funciones de red, desacoplando así las funciones de red de los dospositivos físicos. La siguiente imagen muestra un ejemplo de cómo funcionaría una red bajo este esquema.
+\textit{Network Function Virtualization o NFV ofrece una nueva forma de diseñar, aprovisionar y administrar los servicios de red, desacoplando las funciones de los hardware propietarios y realizando funciones en software como NAT, firewall y DNS por nombrar algunos ejemplos. Esta tecnología se encuentra diseñada para consolidar los componentes de red requeridos para lograr una infraestructura completamente virtualizada.}
+\\
+Bajo este concepto toda la orquestración y control de los dispositivos físicos se realizaría desde un punto central donde se administrarán las funciones de red, desacoplando así las funciones de red de los dospositivos físicos. La siguiente imagen muestra un ejemplo de cómo funcionaría una red bajo este esquema.
+\\
+NFV se diferencia de SDN tradicional en cuanto a que en lugar de desacoplar como tal el plano de control se enfoca en las funciones de red como tal, pero cumple el mismo objetivo de obtener una infraestructura de red que sea más ágil y escalable. \textbf{Ver figura 5.2 NFV}
 
+
+\begin{figure}[htbp]
+  \centering
+  %\subcaptionbox{\label{fig:leftsubfig}}%
+    {\includegraphics[width=0.9\linewidth]{figure12}}%
+%  \subcaptionbox{Another sub-figure\label{fig:rightsubfig}}%
+%    {\includegraphics[width=0.5\linewidth]{knitting-vectorial}}%
+  \caption{Network Function Virtualization (NFV)}
+  \label{fig:fig2subfig}
+\end{figure}
 
 \subsection{OpenFlow}
 \label{sec:OpenFlow}
 
-Es un protocolo utilizado para suministrar una interfaz abierta para controlar la conectividad y los flujos de dicha conectividad dentro de una red SDN, es un protocolo extensible por lo que permite a los programadores definir elementos adicionales que permitan al protocolo adaptarse a diferentes redes y a nuevas tecnologías. https://www.opennetworking.org/technical-communities/areas/specification/open-datapath/
-Openflow funciona principalmente a través de programas Datapath en donde se define el comportamiento esperado para cada tipo de paquete y el camino que debe tomar dentro de la red, para esto openflow utiliza diversos componentes durante su ejecución que pueden verse en la figura xx.(OFN SDN evolution ver 1.0,Open Networking Foundation, 2016.
+Es un protocolo utilizado para suministrar una interfaz abierta para controlar la conectividad y los flujos de dicha conectividad dentro de una red SDN, es un protocolo extensible por lo que permite a los programadores definir elementos adicionales que permitan al protocolo adaptarse a diferentes redes y a nuevas tecnologías. 
+\\
+%https://www.opennetworking.org/technical-communities/areas/specification/open-datapath/
+Openflow funciona principalmente a través de programas Datapath en donde se define el comportamiento esperado para cada tipo de paquete y el camino que debe tomar dentro de la red, para esto Openflow utiliza diversos componentes durante su ejecución que pueden verse en la \textbf{Ver figura 5.3 OpenFlow}
+%(OFN SDN evolution ver 1.0,Open Networking Foundation, 2016.
+\\
+\begin{figure}[htbp]
+  \centering
+  %\subcaptionbox{\label{fig:leftsubfig}}%
+    {\includegraphics[width=0.9\linewidth]{figure13}}%
+%  \subcaptionbox{Another sub-figure\label{fig:rightsubfig}}%
+%    {\includegraphics[width=0.5\linewidth]{knitting-vectorial}}%
+  \caption{OpenFlow)}
+  \label{fig:fig2subfig}
+\end{figure}
+Cada uno de estos programas de datapath \textbf{Ver figura 5.4 Datapath OpenFlow} es posteriormente compilado para ser ejecutado en el código nativo de cada uno de los vendedores de los dispositivos de hardware, de esta manera el programa de datapath puede ser utilizado independientemente del vendedor del hardware.
 
-Cada uno de estos programas de datapath es posteriormente compilado para ser ejecutado en el código nativo de cada uno de los vendedores de los dispositivos de hardware, de esta manera el programa de datapath puede ser utilizado independientemente del vendedor del hardware.
 
+\begin{figure}[htbp]
+  \centering
+  %\subcaptionbox{\label{fig:leftsubfig}}%
+    {\includegraphics[width=0.9\linewidth]{figure14}}%
+%  \subcaptionbox{Another sub-figure\label{fig:rightsubfig}}%
+%    {\includegraphics[width=0.5\linewidth]{knitting-vectorial}}%
+  \caption{Datapath OpenFlow)}
+  \label{fig:fig2subfig}
+\end{figure}
 
 \subsection{NETCONF}
 \label{sec:NETCONF}
 
-El protocolo se encuentra definido por el estándar RFC6241 de la IETF y suministra mecanismos para instalar, manipular y eliminar configuración en dispositivos de red utilizando el formato XML.
-NETCONF define un mecanismo simple mediante el cual un dispositivo obtiene una API, esto con el objetivo de que las aplicaciones utilicen dicha API para enviar y recibir configuraciones desde y hacia los dispositivos de red, esto utilizando el paradigma RPC de forma que el cliente codifique un RPC en formato XML y lo envíe a un servidor, quien responderá con otro XML codificado.
+\textit{El protocolo se encuentra definido por el estándar RFC6241 de la IETF y suministra mecanismos para instalar, manipular y eliminar configuración en dispositivos de red utilizando el formato XML.\\
+NETCONF define un mecanismo simple mediante el cual un dispositivo obtiene una API, esto con el objetivo de que las aplicaciones utilicen dicha API para enviar y recibir configuraciones desde y hacia los dispositivos de red, esto utilizando el paradigma RPC de forma que el cliente codifique un RPC en formato XML y lo envíe a un servidor, quien responderá con otro XML codificado.}
 
-Conceptualmente el protocolo NETCONF se divide en 4 capas como lo muestra la siguiente imagen:
+Conceptualmente el protocolo NETCONF se divide en 4 capas \textbf{Ver figura 5.5 Capas NETCONF}
 
+
+\begin{figure}[htbp]
+  \centering
+  %\subcaptionbox{\label{fig:leftsubfig}}%
+    {\includegraphics[width=0.9\linewidth]{figure14}}%
+%  \subcaptionbox{Another sub-figure\label{fig:rightsubfig}}%
+%    {\includegraphics[width=0.5\linewidth]{knitting-vectorial}}%
+  \caption{Capas del Protocolo NETCONF)}
+  \label{fig:fig2subfig}
+\end{figure}
 
 1.La capa de transporte seguro suministra un camino de comunicación entre cliente y servidor, en general netconf puede ser utilizado sobre cualquier protocolo de transporte que cumpla con ciertas características.
 2.La capa de mensajes provee un mecanismo de entramado independiente del transporte para la codificación de RPC y notificaciones.
