@@ -8,8 +8,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Portuguese - strings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstractstring[pt]={Resumo}
-\keywordsstring[pt]={Palavras-chave}
+\abstractstring[pt]={Resumen}
+\keywordsstring[pt]={Palabras-clave}
 \notdefined[pt]={NÃO DEFINIDO}
 \acknowledgementsstring[pt]={Agradecimentos}
 
@@ -75,7 +75,7 @@
 \dissertationstr[phdprop,pt]={Tesis que para Optar por el Grado de: %
 \thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
 \dissertationstr[phd,pt]={Tesis que para Optar por el Grado de: %
-\thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
+\thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ en\\[1ex] \textbf{\themajorfield[\novathesis@opt@coverlang]}}
 
-\copyrighttextstr[pt]={A \thefaculty[\novathesis@opt@copyrightlang]\ e a \theuniversity[\novathesis@opt@copyrightlang]\ têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar esta dissertação através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objetivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor.}
-\acknowledgmentsstr[pt]={Este documento foi gerado utilizando o processador (pdf)\LaTeX, com base no template “novathesis” [1] desenvolvido no Dep.\ Informática da FCT-NOVA [2].\quad[1] \url{https://github.com/joaomlourenco/novathesis}\quad[2] \url{http://www.di.fct.unl.pt}}
+\copyrighttextstr[pt]={A la \thefaculty[\novathesis@opt@copyrightlang]\ y la \theuniversity[\novathesis@opt@copyrightlang]\ tienen el derecho, perpetuo y sin límites geográficos, de archivar y publicar esta disertación a través de ejemplares impresos reproducidos en papel o de forma digital, o por cualquier otro medio conocido o que venga a ser inventado, y de divulgarla a través de repositorios científicos y de admitir su copia y distribución con objetivos educativos o de investigación, no comerciales, siempre que se dé crédito al autor y editor.}
+\acknowledgmentsstr[pt]={Este documento fue generado por el procesador (pdf)\LaTeX, com base de template “novathesis” [1] y editado por José Armando Son Rojas [2].\quad[1] \url{https://github.com/jsonArmando/thesis}\quad[2] \url{https://www.uelbosque.edu.co}}

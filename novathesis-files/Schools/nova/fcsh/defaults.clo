@@ -6,13 +6,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Univesity
-\university[pt]={Universidade NOVA de Lisboa}
+\university[pt]={Universidad El Bosque}
 \university[en]={NOVA University Lisbon}
 \university[fr]={NOVA University Lisbon}
 \university[it]={NOVA University Lisbon}
 
 % Faculty / School
-\faculty[pt]={Faculdade de Ciências Sociais e Humanas}
+\faculty[pt]={Facultad de Ingeniería}
 \faculty[en]={School of Social Sciences and Humanities}
 \faculty[fr]={School of Social Sciences and Humanities}
 \faculty[it]={School of Social Sciences and Humanities}

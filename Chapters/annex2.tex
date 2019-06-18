@@ -5,7 +5,138 @@
 %%
 %% Chapter with example of appendix with a short dummy text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Annex 2 Lorem Ipsum}
+\chapter{Anexo 2}
 \label{ann:lorem_ipsum2}
 
-\lipsum[1-5]
+\lstset{language=java, caption=HBR2 Configuration, label=lst:YANG}
+\begin{lstlisting}
+Current configuration : 7226 bytes
+! Last configuration change at 17:24:26 UTC Sun Jun 2 2019
+version 16.10
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service call-home
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
+hostname HBR-2
+boot-start-marker
+boot-end-marker
+no aaa new-model
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+  no destination transport-method email
+ip vrf IWAN-TRANSPORT-1
+ rd 100:1
+ip vrf IWAN-TRANSPORT-2
+ rd 100:3
+login on-success log
+subscriber templating
+multilink bundle-name authenticated
+domain ONE
+ vrf default
+  border
+   source-interface Loopback789
+   master 10.60.4.4
+crypto pki trustpoint TP-self-signed-4033344212
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-4033344212
+ revocation-check none
+ rsakeypair TP-self-signed-4033344212
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+crypto pki certificate chain TP-self-signed-4033344212
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 050
+  ...
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+license udi pid CSR1000V sn 9V1OHJMYH13
+diagnostic bootup level minimal
+spanning-tree extend system-id
+redundancy
+interface Loopback789
+ ip address 10.60.4.3 255.255.255.255
+ ip pim sparse-mode
+interface Tunnel10
+ bandwidth 300000
+ ip address 10.60.0.56 255.255.254.0
+ no ip redirects
+ ip mtu 1400
+ ip pim nbma-mode
+ ip pim sparse-mode
+ ip nhrp authentication cisco123
+ ip nhrp network-id 101
+ ip nhrp redirect
+ ip tcp adjust-mss 1360
+ delay 1000
+ tunnel source GigabitEthernet2
+ tunnel mode gre multipoint
+ tunnel key 101
+ tunnel vrf IWAN-TRANSPORT-1
+ domain ONE path MPLS1 path-id 20
+interface Tunnel11
+ bandwidth 150000
+ ip address 10.60.2.56 255.255.254.0
+ no ip redirects
+ ip mtu 1400
+ ip pim nbma-mode
+ ip pim sparse-mode
+ ip nhrp authentication cisco123
+ ip nhrp network-id 102
+ ip nhrp redirect
+ ip tcp adjust-mss 1360
+ delay 1000
+ tunnel source GigabitEthernet3
+ tunnel mode gre multipoint
+ tunnel key 102
+ tunnel vrf IWAN-TRANSPORT-2
+ domain ONE path INET1 path-id 21
+interface GigabitEthernet1
+ ip address 10.230.6.2 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+interface GigabitEthernet2
+ ip vrf forwarding IWAN-TRANSPORT-1
+ ip address 10.168.73.223 255.255.255.192
+ negotiation auto
+ no mop enabled
+ no mop sysid
+interface GigabitEthernet3
+ ip vrf forwarding IWAN-TRANSPORT-2
+ ip address 200.0.0.2 255.255.255.248
+ negotiation auto
+ no mop enabled
+ no mop sysid
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+router eigrp 100
+ network 10.60.0.0 0.0.1.255
+ network 10.60.2.0 0.0.1.255
+ network 10.60.4.3 0.0.0.0
+ network 10.230.6.0 0.0.0.255
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+no service-routing capabilities-manager
+control-plane
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+end
+\end{lstlisting}
+

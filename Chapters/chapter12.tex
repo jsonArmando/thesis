@@ -5,18 +5,54 @@
 %%
 %% Chapter with lots of dummy text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Análisis de los Resultados}
-\label{cha:Análisis de los Resultados}
+\chapter{Discusión}
+\label{cha:Discusión}
 
-\lipsum[1-100]
-\lipsum[1-100]
-\lipsum[1-100]
-% \lipsum[1-100]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
-% \lipsum[1-700]
+Al realizar una investigación sobre los diferentes diseños de redes obteniendo como resultado SD-WAN procede a realizar discusiones que sirven para consolidar lo obtenido.
+\\
+\\
+El objetivo planteado en la investigación diseño de una SD-WAN para un cliente Retail, se incluye un desarrollo sobre donde se aplica este campo en las telecomunicaciones, comparando que existe mayor confiabilidad en el uso de IWAN que implementando infraestructura mejorando una calidad de servicio.
+\\
+\\
+Vamos a centrar la discusión en aquellos aspectos más revelantes que se ha extraído de la investigación, diseño resultados y resultados obtenidos disponiendo de elementos especifícos y comparación de aportes con nuestra experiencia adquirida.
+\\
+\\
+Se tiene en cuenta como hoy en día como las redes ha ido avanzando, tal el caso que las infraestructuras están siendo migradas al \textbf{"Cloud"} o conocido naturalmente como la nube, esto ha ocacionado mayor ventajas debido a que se presenta mayor confiabilidad en la redes, mejor administración, control del tráfico y evitando fallas en menor riesgo.
+\\
+\\
+El análisis de resultados llevó a una tendencia del diseño presente en la SD-WAN, la utilización de OpenDayLight como controladora, utilización de software libre, permite el uso de protocolos como \textbf{OpenFlow} y \textbf{NetConf}.
+\\
+\\
+Esta arquitectura permite conectar cualquier elemento de red, haciendo facilmente para la realización de conexiones y permitiendo fácil configuración de equipos como \textbf{CSV 1000v} de Cisco, mientras se utiliza otra tecnología se puede tener dificultad por licencias, permisos, etc.
+\\
+\\
+A continuación se describe las puntuaciones utilizadas en el diseño que actuan como controladoras de red.
+\\
+\\
+\textbf{Redundancia:} dictribución de las funciones de la red, como es distribución de equipos de una forma que no permita generar redundancia.
+\\
+\textbf{Calidad de Servicio:} siempre se llevo manejo de buenas prácticas para obtener una calidad de servicio al 100\%.
+\\
+\textbf{Balanceo de Carga:} se distribuyó el tráfico de internet de acuerdo a las sedes, para evitar congestiones, caídas, retardos, etc.
+\\
+\\
+El objetivo del diseño pretende conseguir un nivel óptimo de tráfico en la red para un cliente retail, enfocado hacia el \textbf{Cloud} y la utilización de una SD-WAN, que permitió un diseño estable para las sedes.
+\\
+\\
+\textbf{SD-WAN global con calidad MPLS pero sin costo:}Las SD-WAN reducen los costos, aumentan la agilidad de la red y mejoran la confiabilidad en gran parte al aprovechar los servicios de Internet asequibles. Pero junto con sus beneficios, las redes troncales de Internet también introducen problemas de coherencia ausentes en las WAN globales estructuradas en torno a MPLS. Las nuevas arquitecturas principales definidas por software ofrecen una solución, que proporciona a las empresas alternativas de backbone asequibles y de alta calidad a los servicios MPLS tradicionales.
+\\
+\\
+Pruebas recientes realizadas por expertos SD-WAN destacaron los problemas del núcleo de Internet. Medimos y comparamos la demora de extremo a extremo en varios servicios de última milla, varias redes troncales de Internet y una red troncal privada (la red de AWS). Nuestras pruebas demostraron que si bien como porcentaje, las conexiones de la última milla podrían ser las más erráticas, la gran longitud a través del núcleo de Internet en una conexión global hace que el rendimiento de la milla media sea un determinante mucho mayor de la latencia general. Por ejemplo, la variación de la última milla en cuatro caminos a Bangalore desde San José, Londres, Tokio y Sydney fue de 5.88 ms (la mediana era 3 ms). En contraste, las millas medias variaron de 36\% a 85\%, 92 ms a 125 ms, un impacto 20 veces mayor en la conexión.
+\\
+\\
+Para llevar los desafíos de una SD-WAN se tuvo en cuenta:
+Insistir en la protección nativa de firewall de próxima generación.
+La integración es fundamental.
+El tráfico encriptado debe ser inspeccionado.
+\\
+\\Una SD-WAN, como la transformación de la red.
+
+
+
+
+
