@@ -1,0 +1,77 @@
+\BOOKMARK [0][-]{chapter.1}{T\355tulo}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Introducci\363n}{}% 2
+\BOOKMARK [0][-]{chapter.3}{Descripci\363n General del Proyecto}{}% 3
+\BOOKMARK [1][-]{section.3.1}{Definici\363n del Problema}{chapter.3}% 4
+\BOOKMARK [1][-]{section.3.2}{Aspectos a Solucionar}{chapter.3}% 5
+\BOOKMARK [1][-]{section.3.3}{Soluci\363n Propuesta}{chapter.3}% 6
+\BOOKMARK [0][-]{chapter.4}{Estado del Arte}{}% 7
+\BOOKMARK [1][-]{section.4.1}{Marco de Referencia Te\363rico}{chapter.4}% 8
+\BOOKMARK [2][-]{subsection.4.1.1}{Conceptos Generales de una SD-WAN}{section.4.1}% 9
+\BOOKMARK [2][-]{subsection.4.1.2}{Modelos de Programabilidad de Red}{section.4.1}% 10
+\BOOKMARK [2][-]{subsection.4.1.3}{Network Function Virtualization \(NFV\)}{section.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.1.4}{OpenFlow}{section.4.1}% 12
+\BOOKMARK [2][-]{subsection.4.1.5}{NETCONF}{section.4.1}% 13
+\BOOKMARK [2][-]{subsection.4.1.6}{Modelos de datos}{section.4.1}% 14
+\BOOKMARK [2][-]{subsection.4.1.7}{RESTful APIs}{section.4.1}% 15
+\BOOKMARK [2][-]{subsection.4.1.8}{RESTCONF}{section.4.1}% 16
+\BOOKMARK [1][-]{section.4.2}{Marco de Referencia Tecnol\363gico}{chapter.4}% 17
+\BOOKMARK [2][-]{subsection.4.2.1}{IWAN}{section.4.2}% 18
+\BOOKMARK [2][-]{subsection.4.2.2}{DMVPN}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.3}{WAAS}{section.4.2}% 20
+\BOOKMARK [2][-]{subsection.4.2.4}{EIGRP}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.5}{PFR}{section.4.2}% 22
+\BOOKMARK [1][-]{section.4.3}{Open Daylight}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.4}{Cisco VIPTELA}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.5}{NSX SD-WAN}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.6}{WAN definida por software \(SD-WAN\)}{chapter.4}% 26
+\BOOKMARK [0][-]{chapter.5}{Glosario de T\351rminos}{}% 27
+\BOOKMARK [0][-]{chapter.6}{Justificaci\363n}{}% 28
+\BOOKMARK [0][-]{chapter.7}{Objetivos}{}% 29
+\BOOKMARK [1][-]{section.7.1}{Objetivo General}{chapter.7}% 30
+\BOOKMARK [1][-]{section.7.2}{Objetivos Espec\355ficos}{chapter.7}% 31
+\BOOKMARK [0][-]{chapter.8}{Requerimientos}{}% 32
+\BOOKMARK [1][-]{section.8.1}{Requerimientos Funcionales}{chapter.8}% 33
+\BOOKMARK [1][-]{section.8.2}{Requerimientos no Funcionales}{chapter.8}% 34
+\BOOKMARK [0][-]{chapter.9}{Metodolog\355a de Desarrollo}{}% 35
+\BOOKMARK [1][-]{section.9.1}{Utilizaci\363n de la Metodolog\355a del Project Management Institute \(PMI\)}{chapter.9}% 36
+\BOOKMARK [0][-]{chapter.10}{Dise\361o de una Red SD-WAN}{}% 37
+\BOOKMARK [1][-]{section.10.1}{Inversi\363n para una SD-WAN}{chapter.10}% 38
+\BOOKMARK [1][-]{section.10.2}{Precios en una Red SD-WAN}{chapter.10}% 39
+\BOOKMARK [1][-]{section.10.3}{Costos para Implementaci\363n en Infraestructura Cloud}{chapter.10}% 40
+\BOOKMARK [2][-]{subsection.10.3.1}{Amazon}{section.10.3}% 41
+\BOOKMARK [2][-]{subsection.10.3.2}{Microsoft Azure}{section.10.3}% 42
+\BOOKMARK [2][-]{subsection.10.3.3}{Google Cloud}{section.10.3}% 43
+\BOOKMARK [2][-]{subsection.10.3.4}{Oracle Cloud}{section.10.3}% 44
+\BOOKMARK [1][-]{section.10.4}{An\341lisis de Inversi\363n para Cloud}{chapter.10}% 45
+\BOOKMARK [2][-]{subsection.10.4.1}{Enfoque al Cliente: Costo, Confiabilidad, Seguridad}{section.10.4}% 46
+\BOOKMARK [1][-]{section.10.5}{Controladores de Negocio SD-WAN}{chapter.10}% 47
+\BOOKMARK [1][-]{section.10.6}{Introducci\363n a SD-WAN}{chapter.10}% 48
+\BOOKMARK [1][-]{section.10.7}{Tipos de Arquitectura SD-WAN}{chapter.10}% 49
+\BOOKMARK [2][-]{subsection.10.7.1}{Enfoque de una SD-WAN}{section.10.7}% 50
+\BOOKMARK [2][-]{subsection.10.7.2}{Cloud}{section.10.7}% 51
+\BOOKMARK [2][-]{subsection.10.7.3}{Cloud Backbone}{section.10.7}% 52
+\BOOKMARK [1][-]{section.10.8}{Selecci\363n de Proveedor y Tecnolog\355a}{chapter.10}% 53
+\BOOKMARK [1][-]{section.10.9}{Ventajas y Desventajas de la Soluci\363n Propuesta}{chapter.10}% 54
+\BOOKMARK [1][-]{section.10.10}{Requerimientos de Aplicaciones}{chapter.10}% 55
+\BOOKMARK [1][-]{section.10.11}{Requerimientos de Ancho de Banda}{chapter.10}% 56
+\BOOKMARK [2][-]{subsection.10.11.1}{Sede Nacional Tocancip\341:}{section.10.11}% 57
+\BOOKMARK [2][-]{subsection.10.11.2}{Sede Nacional Medell\355n:}{section.10.11}% 58
+\BOOKMARK [2][-]{subsection.10.11.3}{Sede Nacional Antioquia Norte:}{section.10.11}% 59
+\BOOKMARK [2][-]{subsection.10.11.4}{Sede Nacional Antioquia Norte:}{section.10.11}% 60
+\BOOKMARK [1][-]{section.10.12}{Dise\361o del DataCenter}{chapter.10}% 61
+\BOOKMARK [1][-]{section.10.13}{Dise\361o de Sedes Remotas}{chapter.10}% 62
+\BOOKMARK [1][-]{section.10.14}{Dise\361o de Tiendas}{chapter.10}% 63
+\BOOKMARK [1][-]{section.10.15}{Dise\361o de Regionales}{chapter.10}% 64
+\BOOKMARK [1][-]{section.10.16}{Dise\361o de Sedes Nacionales}{chapter.10}% 65
+\BOOKMARK [1][-]{section.10.17}{Dise\361o de Enrutamiento}{chapter.10}% 66
+\BOOKMARK [1][-]{section.10.18}{Simulaci\363n}{chapter.10}% 67
+\BOOKMARK [2][-]{subsection.10.18.1}{Infraestructura Utilizada para la Simulaci\363n}{section.10.18}% 68
+\BOOKMARK [2][-]{subsection.10.18.2}{Topolog\355as y Configuraciones Realizadas}{section.10.18}% 69
+\BOOKMARK [0][-]{chapter.11}{Resultados}{}% 70
+\BOOKMARK [0][-]{chapter.12}{Discusi\363n}{}% 71
+\BOOKMARK [0][-]{chapter.13}{Conclusiones}{}% 72
+\BOOKMARK [0][-]{chapter*.77}{Bibliografia}{}% 73
+\BOOKMARK [0][-]{section*.78}{Anexos}{}% 74
+\BOOKMARK [0][-]{annex.1}{Anexo}{}% 75
+\BOOKMARK [0][-]{annex.2}{Anexo 2}{}% 76
+\BOOKMARK [0][-]{annex.3}{Anexo 3}{}% 77

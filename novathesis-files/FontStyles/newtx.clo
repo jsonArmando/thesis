@@ -7,6 +7,6 @@
 \RequirePackage[full]{textcomp}
 \RequirePackage[osf]{newtxtext} % osf for text, not math
 \RequirePackage{cabin} % sans serif
-\RequirePackage[varqu,varl]{inconsolata} % sans serif typewriter
+%\RequirePackage[varqu,varl]{inconsolata} % sans serif typewriter
 \RequirePackage[bigdelims,vvarbb]{newtxmath} % bb from STIX
 \RequirePackage[cal=boondoxo]{mathalfa} % mathcal

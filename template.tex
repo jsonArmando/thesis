@@ -119,7 +119,11 @@
 
 %% For automatic adding month and year
 \usepackage[calc]{datetime2}
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
+\fontfamily{tahoma}  
+%\usepackage{fontspec}
+%\setmainfont{Tahoma}
+\fontseries{b} %ignored
 \pagestyle{fancy}
 \fancyhead[r]{EPI-089}
 \fancyhead[l]{J.S. Quintero, J.A. Son}
@@ -218,12 +222,12 @@
 
 % Acknowledgments text. Will only be considered for final documents,
 % i.e., "bsc", "msc" and "phd", otherwise, it will be silently ignored
-\acknowledgementsfile{acknowledgements}
+%\acknowledgementsfile{acknowledgements}
 %\acknowledgementsfile{acknowledgements1}
 %\acknowledgementsfile{dedicatory}
 
 
-\quotefile{quote}    % Quote
+%\quotefile{quote}    % Quote
 \abstractfile[pt]{abstract-pt}  % Abstract in Portuguese
 \abstractfile[en]{abstract-en}  % Abstract in English
 \abstractfile[fr]{abstract-fr}
